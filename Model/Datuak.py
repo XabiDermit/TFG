@@ -39,6 +39,9 @@ def datuak_lortu():
             # Idazlea objetua sortu
             datuak_writer = csv.writer(datueguneratuak)
 
+            # Zenbat erabiltzaile topatu ez diren zenbatzeko
+            user_not_found = 0
+
             for kont, row in enumerate(csv_reader):
                 # 50 iterazio behin abisatzen du
                 if (kont % 50) == 0:
@@ -49,14 +52,20 @@ def datuak_lortu():
 
                 # Erabiltzaile bakoitzaren data lortu
                 userdata = idtik_datara(row[0], row[1])
-                # Erabilzailea aurkitu ez bada hurrengora pasatu
+                # Erabilzailea aurkitu bada
                 if len(userdata) != 0:
                     datuak_writer.writerow(userdata)
+                # Bestela zenbat txarto dauden zenbatu
+                else:
+                    user_not_found += 1
 
     # denbora totala kalkulatu
     exekuzio_denbora = time.time() - hasiera_denbora
     print("DATUEN PREPROZESAMENDUAREN DENBORA TOTALA: ")
     denbora_erakutsi(exekuzio_denbora)
+
+    # Zenbat erabiltzaile topatu ez diren aurkeztu
+    print("ZENBAT ERABILTZAILE EZ DIRA TOPATU: " + str(user_not_found))
 
 
 def idtik_datara(user_id, klasea):
