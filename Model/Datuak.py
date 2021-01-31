@@ -35,7 +35,7 @@ def datuak_lortu():
         # Irakurtzailea objetua sortu
         csv_reader = csv.reader(sarrera_datuak, delimiter=',')
         # Datuak berriro idazteko
-        with open('datuaguneratuak.csv', mode='w') as datueguneratuak:
+        with open('datuaguneratuak.csv', mode='w', newline='') as datueguneratuak:
             # Idazlea objetua sortu
             datuak_writer = csv.writer(datueguneratuak)
 
@@ -43,8 +43,8 @@ def datuak_lortu():
             user_not_found = 0
 
             for kont, row in enumerate(csv_reader):
-                # 50 iterazio behin abisatzen du
-                if (kont % 50) == 0:
+                # 100 iterazio behin abisatzen du
+                if (kont % 100) == 0:
                     print("############################################# " + str(kont) + ". ITERAZIOA ##############################################")
                     # denbora kalkulatu
                     exekuzio_denbora = time.time() - hasiera_denbora
@@ -59,10 +59,18 @@ def datuak_lortu():
                 else:
                     user_not_found += 1
 
+
+    # Amaierako datuak hobeto ikusteko
+    print("##############################################################################################")
+    print()
+    print()
+    print()
+
     # denbora totala kalkulatu
     exekuzio_denbora = time.time() - hasiera_denbora
     print("DATUEN PREPROZESAMENDUAREN DENBORA TOTALA: ")
     denbora_erakutsi(exekuzio_denbora)
+    print()
 
     # Zenbat erabiltzaile topatu ez diren aurkeztu
     print("ZENBAT ERABILTZAILE EZ DIRA TOPATU: " + str(user_not_found))
@@ -129,7 +137,7 @@ def denbora_erakutsi(exekuzio_denbora):
     minutu = exekuzio_denbora // 60
     exekuzio_denbora %= 60
     segundu = exekuzio_denbora
-    print("Egun:Ordu:Minutu:Sergundu --> %d:%d:%d:%d" % (egun, ordu, minutu, segundu))
+    print("Egun:Ordu:Minutu:Segundu --> %d:%d:%d:%d" % (egun, ordu, minutu, segundu))
 
 
 datuak_lortu()
