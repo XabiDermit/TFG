@@ -24,7 +24,7 @@ for tweet in tweepy.Cursor(api.search, q = 'tweepy').items(10):
 """
 
 
-def datuak_lortu():
+def datuak_transformatu():
     # Metodo hau datuak preprozesatzen ditu (id-tik datuetara pasatu eta berriro .csv batean gorde)
 
     # Denboraren kontrola eramateko
@@ -35,7 +35,7 @@ def datuak_lortu():
         # Irakurtzailea objetua sortu
         csv_reader = csv.reader(sarrera_datuak, delimiter=',')
         # Datuak berriro idazteko
-        with open('datuaguneratuak.csv', mode='w', newline='') as datueguneratuak:
+        with open('datu_eguneratuak.csv', mode='w', newline='') as datueguneratuak:
             # Idazlea objetua sortu
             datuak_writer = csv.writer(datueguneratuak)
 
@@ -140,4 +140,4 @@ def denbora_erakutsi(exekuzio_denbora):
     print("Egun:Ordu:Minutu:Segundu --> %d:%d:%d:%d" % (egun, ordu, minutu, segundu))
 
 
-datuak_lortu()
+datuak_transformatu()
