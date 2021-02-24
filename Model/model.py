@@ -10,7 +10,7 @@ from sklearn.metrics import precision_recall_fscore_support
 class Model:
     model = None
 
-    def parametroak_lortu(self, x_train, y_train, x_test, y_test):
+    def parametroak_lortu(self, x, y):
         # metodo hau sailkatzailearentzako parametro optimoak lortzen ditu
 
         # paremetro optimoenak bilatu
@@ -25,49 +25,48 @@ class Model:
                       (200, 100, 50), (300, 200, 100), (200, 150, 100, 50, 25),
                       (120, 60), (90, 45), (150, 75), (110, 55)]
         aktibazioak = ['identity', 'tanh', 'logistic', 'relu']
-        solvers = ['adam', 'lbfgs']
+
 
         parametro_egokiak = ()
-        best_recall = 0
-        for solver in solvers:
-            for activation in aktibazioak:
-                for topologia in topologiak:
-                    # Sailkatzailea sortu
-                    mlp = MLPClassifier(max_iter=500, activation=activation, solver=solver,
-                                        hidden_layer_sizes=topologia, verbose=True)
+        best_loss = float('inf')
+        for activation in aktibazioak:
+            for topologia in topologiak:
+                # Sailkatzailea sortu
+                mlp = MLPClassifier(max_iter=500, activation=activation, hidden_layer_sizes=topologia, verbose=True,
+                                    n_iter_no_change=50)
 
-                    # sailkatzailea entrenatu
-                    mlp.fit(x_train, y_train)
+                # sailkatzailea entrenatu
+                mlp.fit(x, y)
 
-                    # iragarpenak egin
-                    iragarpenak = mlp.predict(x_test)
+                current_loss = mlp.best_loss_
 
-                    # bot klasearen recall-a kontuan hartuko da,
-                    cls_report = precision_recall_fscore_support(y_test, iragarpenak, average='binary', pos_label=0)
-                    print(cls_report)
-                    bot_recall = cls_report[1]
+                # recall egokiena lortu
+                if current_loss < best_loss:
+                    best_loss = current_loss
+                    print("Best loss: " + str(current_loss))
+                    # recall horretarako parametroak gorde
+                    parametro_egokiak = (activation, topologia)
 
-                    # recall egokiena lortu
-                    if bot_recall > best_recall:
-                        best_recall = bot_recall
-                        print("Best recall[bot]: " + str(bot_recall))
-                        # recall horretarako parametroak gorde
-                        parametro_egokiak = (solver, activation, topologia)
-
-        print(" solver: " + parametro_egokiak[0] + " activation: " +
-              parametro_egokiak[1] + " topologia: " + parametro_egokiak[2])
+        print(f"activation: {parametro_egokiak[0]}")
+        print(f"topologia: {parametro_egokiak[1]}")
 
         return parametro_egokiak
 
-    def entrenatu(self, parametroak, X, Y):
+    def entrenatu(self, parametroak, x, y):
         # sailkatzailearen parametro optimoak jakinda, modeloa entrenatu eta gorde
         # modeloa sortu
-        mlp = MLPClassifier(max_iter=500, solver=parametroak[0], activation=parametroak[1],
-                            hidden_layer_sizes=parametroak[2])
+        mlp = MLPClassifier(max_iter=500,  activation=parametroak[0], hidden_layer_sizes=parametroak[1],
+                            n_iter_no_change=50)
 
-        # modeloa entrenatu (orain datu guztiekin)
-        mlp.fit(X, Y)
+        # modeloa entrenatu
+        mlp.fit(x, y)
         print("Modeloa entrenatu da")
+
+        # modeloaren kalitatearen estimazioa kalkulatu datu guztiekin: Ez-Zintzoa
+        print("Kalitatearen estimazioa: Ez-Zintzoa:")
+        iragarpenak = mlp.predict(x)
+        print(classification_report(y, iragarpenak))
+        print(confusion_matrix(y, iragarpenak))
 
         # modeloa gorde
         dump(mlp, 'model.joblib')
@@ -94,4 +93,5 @@ x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.33)
 
 # modelorako parametroak optimizatu
 model = Model()
-model.entrenatu(model.parametroak_lortu(x_train, y_train, x_test, y_test), X, Y)
+model.entrenatu(model.parametroak_lortu(X, Y), X, Y)
+
