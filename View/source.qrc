@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="images">
-    <file>images/background.jpg</file>
+    <file>images/iconfinder_arrow-small-right_298727.png</file>
+    <file>images/flecha.png</file>
   </qresource>
 </RCC>

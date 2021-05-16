@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="bgwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>700</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#bgwidget{
+background-color:qlineargradient(spread:pad, x1:0.123847, y1:0.113, x2:0.966, y2:0.965909, stop:0 rgba(255, 102, 0, 255), stop:1 rgba(0, 170, 255, 255))
+}</string>
+   </property>
+   <widget class="QWidget" name="butonwidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>200</y>
+      <width>600</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget#butonwidget{
+background-color:#1d1d1d;
+border-radius:20px
+}</string>
+    </property>
+    <widget class="QPushButton" name="kautotugabebtn">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>213</y>
+       <width>225</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#kautotugabebtn{
+border-radius:20px;
+background-color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+}
+
+QPushButton#kautotugabebtn:hover{
+border-radius:20px;
+background-color:rgb(179, 179, 179);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>KONTU GABE JARRAITU</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="kautotubtn">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>113</y>
+       <width>225</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#kautotubtn{
+border-radius:20px;
+background-color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+}
+
+QPushButton#kautotubtn:hover{
+border-radius:20px;
+background-color:rgb(179, 179, 179);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>KAUTOTU</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ongietorrilbl">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>30</y>
+       <width>210</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#ongietorrilbl{
+color:rgb(255, 255, 255);
+font: 300 32pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>Ongi etorri!</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="edolbl">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>170</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#edolbl{
+color:rgb(255, 255, 255);
+font: 300 12pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>edo</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

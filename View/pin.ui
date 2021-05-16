@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="pinwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>700</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#pinwidget{
+background-color:qlineargradient(spread:pad, x1:0.123847, y1:0.113, x2:0.966, y2:0.965909, stop:0 rgba(255, 102, 0, 255), stop:1 rgba(0, 170, 255, 255))
+}</string>
+   </property>
+   <widget class="QWidget" name="butonwidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>250</y>
+      <width>400</width>
+      <height>200</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget#butonwidget{
+background-color:#1d1d1d;
+border-radius:20px
+}</string>
+    </property>
+    <widget class="QLabel" name="pinlbl">
+     <property name="geometry">
+      <rect>
+       <x>87</x>
+       <y>30</y>
+       <width>230</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#pinlbl{
+color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>LORTUTAKO PIN-A SARTU</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pinbtn">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>100</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#pinbtn{
+border-radius:20px;
+background-color:rgb(255, 255, 255);
+font: 14pt &quot;Calibri&quot;;
+}
+
+QPushButton#pinbtn:hover{
+border-radius:20px;
+background-color:rgb(179, 179, 179);
+font: 14pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>SARTU</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="pintf">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>100</y>
+       <width>231</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit#pintf{background:transparent;
+border:none;
+border-bottom:1px solid white;
+color:rgb(255, 255, 255);
+font: 14pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="source.qrc"/>
+ </resources>
+ <connections/>
+</ui>
