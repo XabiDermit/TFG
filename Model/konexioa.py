@@ -20,8 +20,7 @@ def kontuarekinkautotu():
 def kontugabekautotu():
     auth = tweepy.AppAuthHandler(consumer_key, consumer_secret)
     api = tweepy.API(auth)
-    for tweet in tweepy.Cursor(api.search, q='tweepy').items(10):
-        print(tweet.text)
+    return api
 
 
 def autorizatu(auth, pin):
