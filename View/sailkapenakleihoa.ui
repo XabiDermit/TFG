@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1167</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="bgwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>700</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#bgwidget{
+background-color:qlineargradient(spread:pad, x1:0.123847, y1:0.113, x2:0.966, y2:0.965909, stop:0 rgba(255, 102, 0, 255), stop:1 rgba(0, 170, 255, 255))
+}</string>
+   </property>
+   <widget class="QWidget" name="butonwidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>30</y>
+      <width>200</width>
+      <height>620</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget#butonwidget{
+background-color:#1d1d1d;
+border-radius:20px
+}
+
+QLabel#izenalbl{
+color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}
+QLabel#lagunlbl{
+color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}
+QLabel#jarraitzailelbl{
+color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}
+QLabel#tweetlbl{
+color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}
+
+QLabel#izena2lbl{
+background:transparent;
+border:none;
+border-bottom:1px solid white;
+color:rgb(255, 255, 255);
+font: 14pt &quot;Calibri&quot;;
+font-weight:bold;
+}
+
+QLabel#lagun2lbl{
+background:transparent;
+border:none;
+border-bottom:1px solid white;
+color:rgb(255, 255, 255);
+font: 14pt &quot;Calibri&quot;;
+font-weight:bold;
+}
+
+QLabel#jarraitzaile2lbl{
+background:transparent;
+border:none;
+border-bottom:1px solid white;
+color:rgb(255, 255, 255);
+font: 14pt &quot;Calibri&quot;;
+font-weight:bold;
+}
+
+QLabel#tweet2lbl{
+background:transparent;
+border:none;
+border-bottom:1px solid white;
+color:rgb(255, 255, 255);
+font: 14pt &quot;Calibri&quot;;
+font-weight:bold;
+}
+
+</string>
+    </property>
+    <widget class="QLabel" name="izenalbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Erabiltzaile izena:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lagunlbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#izenalbl{
+color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>Lagun kopurua:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="jarraitzailelbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>210</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#izenalbl{
+color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>Jarraitzaile kopurua:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="tweetlbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>300</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#izenalbl{
+color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>Tweet kopurua:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="izena2lbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="jarraitzaile2lbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>250</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lagun2lbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="tweet2lbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>340</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="butonwidget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>230</y>
+      <width>400</width>
+      <height>200</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget#butonwidget_2{
+background-color:#1d1d1d;
+border-radius:20px
+}
+
+QLabel#sailkapenalbl{
+color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}
+
+QLabel#sailkapenalbl2{
+background:transparent;
+border:none;
+border-bottom:1px solid white;
+color:rgb(255, 255, 255);
+font: 14pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+    </property>
+    <widget class="QLabel" name="sailkapenalbl">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>40</y>
+       <width>280</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#bilatulbl{
+color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>ERABILTZAILEREN SAILKAPENA:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="sailkapenalbl2">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>115</y>
+       <width>300</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#bilatulbl{
+color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>Ezin izan da kontua sailkatu</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="berrirobilatubtn">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>630</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#berrirobilatubtn{
+border-radius:20px;
+background-color:rgb(255, 255, 255);
+font: 16pt &quot;Calibri&quot;;
+}
+
+QPushButton#berrirobilatubtn:hover{
+border-radius:20px;
+background-color:rgb(179, 179, 179);
+font: 16pt &quot;Calibri&quot;;
+font-weight:bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>Berriro Bilatu</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="source.qrc"/>
+ </resources>
+ <connections/>
+</ui>

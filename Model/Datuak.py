@@ -121,7 +121,7 @@ def idtik_datara(user_id, klasea):
 
 
 def informazioa_dauka(info):
-    # Metodo hau 0 bueltatzen du informazioa ematen ez bazaioa, 1 beztela
+    # Metodo hau 0 bueltatzen du informazioa ematen ez bazaio, 1 beztela
     if info is None:
         return 0
     else:

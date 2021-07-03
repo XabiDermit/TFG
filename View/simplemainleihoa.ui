@@ -65,10 +65,10 @@ font-weight:bold;
     <widget class="QPushButton" name="bilatubtn">
      <property name="geometry">
       <rect>
-       <x>300</x>
+       <x>295</x>
        <y>100</y>
-       <width>71</width>
-       <height>41</height>
+       <width>80</width>
+       <height>40</height>
       </rect>
      </property>
      <property name="styleSheet">
